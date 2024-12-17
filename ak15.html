@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gunsmith Cats: AK-15</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/awesome/css/all.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--Всплывающее окно-->
+    <div id="popup-overlay">
+      <div id="popup">
+        <h3 class="basicText">
+          Login in account.
+        </h3>
+        <p class="basicText">
+          Email:
+          <input maxlength="25" size="40" name="login" class="basicInput" id="Email">
+        </p>
+        <p class="basicText">
+          Password:
+          <input type="password" maxlength="25" size="40" name="password" class="basicInput" id="password">
+        </p>
+        <button onclick="hidePopup()" class="basicBtn">Close</button>
+      </div>
+    </div>
+    <!--Класс контейнера от фреймворка Бутстрап-->
+    <div class="container">
+      <!--Класс строк из Бутстрапа для создания колонок-->
+      <div class="row align-items-center">
+        <!--Занимаем 9 из 12 колонок Бутстрапа-->
+        <div class="col-lg-5">
+          <!--Бутстраповский класс для выделения важной информации-->
+          <div class="jumbotron">
+            <h1 class="d-flex align-items-center"><a href="/" class="no-underline"><i class="fa-solid fa-person-rifle"></i>Gunsmith Cats.</a></h1> 
+            <p>
+              <i>Selling guns with love ♡</i> 
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="regLog d-flex align-items-center">
+            <button class="btn btn-link no-underline" onclick="showPopup()">
+              <i class="fa-solid fa-user"></i>
+              Account
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="navbar">
+            <a href="/assaultRifle.html" class="no-underline">Assault rifle</a>
+            <a href="/pistols.html" class="no-underline">Pistols</a>
+            <a href="/ammo.html" class="no-underline">Ammo</a>
+            <a href="/knives.html" class="no-underline">Knives</a>
+          </div>
+        </div>
+    </div>
+    <div id="pageOfGood" class="row">
+        <div class="side">
+            <div class="col-lg-4 side">
+                <div class="imgGood">
+                    <img src="/images/ak15-6.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="col-lg-12 main">
+                <h1 class="basicText">
+                    AK-15
+                </h1>
+                <div class="DescriptionOfGood">
+                    <p>
+                        The 7.62 mm AK-15 is an assault rifle used by the special operations units of the Russian military and other law enforcement agencies.
+                    </p>
+                    <p>
+                        The AK-15 is part of the Ratnik equipment kit.
+                    </p>
+                    <p>
+                        This model is the pinnacle of AK system development, different from the previous generations by its elaborate ergonomics, all-day usability and increased accuracy and precision.
+                    </p>
+                </div>
+                <div class="buy">
+                    <span class="tag tag-default tag-pill pull-xs-right hidden-xs-down">
+                        <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>1337
+                      </span>
+                    <div class="button-container">
+                        <button class="btn btn-link">BUY</button>
+                    </div>
+                </div>
+                     
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+</html>
