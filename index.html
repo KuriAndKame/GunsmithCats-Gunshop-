@@ -45,12 +45,9 @@
           </div>
         </div>
         <div class="col-lg-12">
-          <form id="SearchForm">
-            <p class="basicText">
-              <button type="button"class="basicBtn"  id="SearchBtn ">Search</button>
-              <input type="search" maxlength="25" size="40" name="search" class="basicInput" id="Search" required/>
-            </p>
-          </form>
+          <div class = "search-bar">
+            <input type="text" maxlength="25" size="40" name="search" class="basicInput js-input-search" id="Search" placeholder="Search" required/>
+          </div>
         </div>
         <div class="col-lg-12">
           <div class="regLog d-flex align-items-center">
@@ -64,6 +61,7 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
+
           <div class="navbar">
             <a href="/assaultRifle.html" class="no-underline">Assault rifle</a>
             <a href="/pistols.html" class="no-underline">Pistols</a>
@@ -72,31 +70,34 @@
           </div>
         </div>
           <div class="col-lg-6">
-            <ul class="list-group flex-row">
-              <li class="list-group-item flex-fill align-items-center p-5 border-top">
-                <a href="/ak15.html" class="no-underline"> 
-                  <img src="/images/ak15-6.jpg">
-                  AK-15
-                  <span class="tag tag-default tag-pill pull-xs-right hidden-xs-down">
-                    <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>1337
-                  </span>
-                </a>
-              </li>
-              <li class="list-group-item flex-fill align-items-center p-5 border-top">
-                <a href="#" class="no-underline">
-                  <img src="/images/finka-5.jpg">
-                  Legendary finka NKVD
-                  <span class="tag tag-default tag-pill pull-xs-right hidden-xs-down">
-                    <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>228
-                  </span>
-                </a>
-              </li>
+            <ul class="list-group flex-row js-product-list">
+              <!--
+                <li class="list-group-item flex-fill align-items-center p-5 border-top">
+                  <a href="/ak15.html" class="no-underline"> 
+                    <img src="/images/ak15-6.jpg">
+                    AK-15
+                    <span class="tag tag-default tag-pill pull-xs-right hidden-xs-down">
+                      <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>1337
+                    </span>
+                  </a>
+                </li>
+                <li class="list-group-item flex-fill align-items-center p-5 border-top">
+                  <a href="#" class="no-underline">
+                    <img src="/images/finka-5.jpg">
+                    Legendary finka NKVD
+                    <span class="tag tag-default tag-pill pull-xs-right hidden-xs-down">
+                      <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>228
+                    </span>
+                  </a>
+                </li>
+                -->
             </ul>
           </div>
       </div>
       <div class="col-lg-9 hidden-md-down">
       </div>   
     </div>
+    <script type="module" src="js/main.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
