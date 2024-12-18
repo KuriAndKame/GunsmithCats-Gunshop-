@@ -5,9 +5,7 @@ const products = [
         typeOfGood: "Assault Rifle",
         price: 1337,
         count: 288,
-        photo: [
-            "/images/ak15-6.jpg"
-        ],
+        photo: "/images/ak15-6.jpg",
         info: "big boobie",
         refPath:"/ak15.html" 
     },
@@ -17,9 +15,7 @@ const products = [
         typeOfGood: "Knife",
         price: 228,
         count: 1337,
-        photo: [
-            "/images/finka-5.jpg"
-        ],
+        photo: "/images/finka-5.jpg",
         info: "small boobie",
         refPath:"/finkankvd.html"   
     }

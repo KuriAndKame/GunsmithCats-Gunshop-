@@ -1,6 +1,5 @@
 
 
-
 const popupOverlay = document.getElementById("popup-overlay");
 const popup = document.getElementById("popup");
 const password = document.getElementById("password");
@@ -209,4 +208,55 @@ if (document.getElementById('SearchBtn')) {
             console.log("Please enter a search term.");
         }
     };
+}
+
+
+
+if (document.getElementById('AddBtn')) {
+  document.getElementById('AddBtn').onclick = async () => {
+      const nameInput = document.getElementById("nameOfGoodId").value;
+      const typeInput = document.getElementById("typeOfGoodId").value;
+      const priceInput = document.getElementById("priceId").value;
+      const countInput = document.getElementById("countId").value;
+      const body = {
+          nameofgood: nameInput,
+          typeofgood: typeInput,
+          price: parseInt(priceInput), // Преобразуем в число
+          count: parseInt(countInput) // Преобразуем в целое число
+      }
+      try {
+        const response = await fetch('http://localhost:3020/api/goods', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body)
+        });
+        console.log(12334233)
+
+          if (!response.ok) {
+              throw new Error('Ошибка при добавлении товара');
+          }
+
+          const newGood = await response.json();
+          console.log('Товар добавлен:', newGood);
+
+          // Добавляем новый товар в массив products
+          products.push({
+              id: newGood.id, // Предполагается, что сервер возвращает id нового товара
+              nameOfGood: newGood.nameofgood,
+              typeOfGood: newGood.typeofgood,
+              price: newGood.price,
+              count: newGood.count,
+              photo: newGood.photo || "/images/default.jpg", // Укажите путь к изображению по умолчанию
+              info: newGood.info || "Nothing", // Укажите информацию по умолчанию
+              refPath: "/#.html"  
+          });
+
+          window.location.reload(); // Перезагружаем страницу для обновления данных
+      } catch (error) {
+          console.error('Ошибка:', error);
+          document.getElementById('error-message').innerText = 'Не удалось добавить товар: ' + error.message;
+      }
+  }
 }

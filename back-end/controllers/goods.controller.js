@@ -4,10 +4,8 @@ const db = require('../db')
 
 class GoodsController{
     async createGoods(req, res){
-        const {nameofgood, typeofgood, price, count} = req.body
-        const newGood = await db.query(`INSERT INTO goods (nameofgood, typeofgood, price, count) VALUES ('$1', '$2', $3, $4) RETURNING *`, 
-            [nameofgood,typeofgood, price, count]
-        )
+        const body = req.body
+        const newGood = await db.query(`INSERT INTO goods (nameofgood, typeofgood, price, count, photo) VALUES (${body.nameofgood}, ${body.typeofgood}, ${body.price}, ${body.count}) RETURNING *`)
         res.json(newGood.rows[0])
     }
 
