@@ -1,4 +1,4 @@
-const products = [
+let products = [
     {
         id: 1,
         nameOfGood: "AK-15",
@@ -21,4 +21,13 @@ const products = [
     }
 ]
 
+const addProduct = (newProduct) => {
+    products.push(newProduct);
+};
+
+const getProducts = () => products;
+
 export default products
+export{
+    addProduct,  getProducts
+}

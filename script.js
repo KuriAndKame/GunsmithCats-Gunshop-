@@ -1,11 +1,11 @@
-
-
 const popupOverlay = document.getElementById("popup-overlay");
 const popup = document.getElementById("popup");
 const password = document.getElementById("password");
 
 
+
 function showPopup() {
+
   if(sessionStorage.getItem('id')){
 window.location.href = './user.html'
   } else {
@@ -157,7 +157,7 @@ async function getUser () {
 }
 
 window.onload = async () => {
-  if (window.location.href == 'http://127.0.0.1:5500/user.html') {
+  if (window.location.href == 'http://127.0.0.1:3020/user.html') {
     const response = await fetch(`http://localhost:3020/api/user/${sessionStorage.getItem('id')}`)
     const body = await response.json()
 
@@ -190,9 +190,9 @@ if(document.getElementById('updateBtn'))
   }
 
 
-  const products = [
-    { id: 1, name: "ak15", url: "/ak15.html" }
-];
+  // const products = [
+    // { id: 1, name: "ak15", url: "/ak15.html" }
+// ];
 
 if (document.getElementById('SearchBtn')) {
     document.getElementById('SearchBtn').onclick = () => {
@@ -221,8 +221,8 @@ if (document.getElementById('AddBtn')) {
       const body = {
           nameofgood: nameInput,
           typeofgood: typeInput,
-          price: parseInt(priceInput), // Преобразуем в число
-          count: parseInt(countInput) // Преобразуем в целое число
+          price: priceInput, // Преобразуем в число
+          count: countInput // Преобразуем в целое число
       }
       try {
         const response = await fetch('http://localhost:3020/api/goods', {
@@ -232,8 +232,7 @@ if (document.getElementById('AddBtn')) {
           },
           body: JSON.stringify(body)
         });
-        console.log(12334233)
-
+        console.log(123)
           if (!response.ok) {
               throw new Error('Ошибка при добавлении товара');
           }
@@ -241,18 +240,21 @@ if (document.getElementById('AddBtn')) {
           const newGood = await response.json();
           console.log('Товар добавлен:', newGood);
 
-          // Добавляем новый товар в массив products
-          products.push({
-              id: newGood.id, // Предполагается, что сервер возвращает id нового товара
-              nameOfGood: newGood.nameofgood,
-              typeOfGood: newGood.typeofgood,
-              price: newGood.price,
-              count: newGood.count,
-              photo: newGood.photo || "/images/default.jpg", // Укажите путь к изображению по умолчанию
-              info: newGood.info || "Nothing", // Укажите информацию по умолчанию
-              refPath: "/#.html"  
-          });
-
+          // Импортируем функции для работы с продуктами
+          const { addProduct } = await import('./js/products.js');
+          const products = await import('./js/products.js').then(module => module.default);            // Создаем новый товар
+            const productToAdd = {
+            id: newGood.id, // Предполагается, что сервер возвращает id нового товара
+            nameOfGood: newGood.nameofgood,
+            typeOfGood: newGood.typeofgood,
+            price: newGood.price,
+            count: newGood.count,
+            photo: newGood.photo || "/images/default.jpg", // Укажите путь к изображению по умолчанию
+            info: newGood.info || "Nothing", // Укажите информацию по умолчанию
+            refPath: "/#.html"  
+          };
+          addProduct(productToAdd);          
+          console.log(products)
           window.location.reload(); // Перезагружаем страницу для обновления данных
       } catch (error) {
           console.error('Ошибка:', error);
